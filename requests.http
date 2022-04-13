@@ -1,0 +1,27 @@
+### Spring Boot actuators
+
+### Health
+
+http://localhost:8080/actuator/health
+
+### Info
+
+http://localhost:8080/actuator/info
+
+### Create user
+
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "userName": "Rod"
+}
+
+### Get the user
+
+http://localhost:8080/api/users/1
+
+### Non existing user
+
+http://localhost:8080/api/users/666
+
