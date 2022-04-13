@@ -65,6 +65,10 @@ Run the Spring Boot application using the Spring Boot Maven plugin.
 * [Cloud native buildpacks](https://buildpacks.io/)
   * Build an OCI image for your Spring Boot application
   * Without using a Docker file
+  * Add your Spring Boot Application OCI image to the [docker-compose.yml](docker-compose.yml)
+  * Start your Spring Boot application from Docker `docker-compose up -d` (you need to shut down the application first from your IDEA or Maven plugin)
+  * Don't forget to configure the connection to the database because the application will not run inside a container ;)
+  * Small hint see datasource configuration in: [application.yml](src/main/resources/application.yml)
 * [Archunit](https://www.archunit.org/)
   * Enforce your architecture rules
   * By creating some Archunit tests
