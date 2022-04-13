@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+
+  # https://registry.hub.docker.com/_/mysql/?tab=tags
+  mysql:
+    image: mysql:8.0.28
+    container_name: mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: topSecret
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: secret
+      MYSQL_DATABASE: mydb
+      TZ: $TZ
