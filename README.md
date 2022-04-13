@@ -15,6 +15,13 @@ Including:
 * Rest API layer
   * Spring Web MVC
 
+## Prerequisites
+
+* Java 11
+* Docker (Desktop)
+
+You don't need to have Maven installed. The project contains the [Maven wrapper](https://maven.apache.org/wrapper/) out of the box.
+
 ## Build and run the project
 
 ```
