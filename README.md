@@ -30,7 +30,7 @@ docker-compose up -d
 Run the Spring Boot application using the Spring Boot Maven plugin.
 
 ```
-./mvmvn spring-boot:run
+./mvnw spring-boot:run
 ```
 
 ## Exercises
