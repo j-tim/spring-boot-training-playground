@@ -35,30 +35,30 @@ Run the Spring Boot application using the Spring Boot Maven plugin.
 
 ## Exercises
 
-* Play around with Spring Profiles
+* Play around with [Spring Profiles](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#features.profiles)
   * Introduce a profile like `acceptance`, `production`
   * Experience how property inheritance works
   * Configure the application differently for different profiles (like running Tomcat on a different port)
-* Add Spring Boot test slices for every layer
+* Add [Spring Boot test slices](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#features.testing.spring-boot-applications.autoconfigured-tests) for every layer
   * Hints:
     * `@DataJpaTest`
     * `@WebMvcTest`
   * Make sure to fail the test first before you fix it ;)
-* Testcontainers
+* [Testcontainers](https://www.testcontainers.org/)
   * Introduce more advanced repository layer integration tests 
   * Replace H2 
   * introduce test containers to run repository integration tests against a real MySQL instance running in Docker
 * Introduce tests for the service layer
   * What to choose? Unit tests (Mockito) or integration tests?
   * If you choose to do integration tests make sure tests are not leaving traces behind in the database!
-* Introduce AssertJ
+* [AssertJ](https://assertj.github.io/doc/)
   * Use this great library
   * Rewrite your assertions
   * Experiment with the fluent API try out to do assertions on collections
-* Cloud native buildpacks 
+* [Cloud native buildpacks](https://buildpacks.io/)
   * Build an OCI image for your Spring Boot application
   * Without using a Docker file
-* Archunit
+* [Archunit](https://www.archunit.org/)
   * Enforce your architecture rules
   * By creating some Archunit tests
   * Examples: 
@@ -67,6 +67,36 @@ Run the Spring Boot application using the Spring Boot Maven plugin.
   * Try to use some default archunit rules to enforce things like: 
     * We don't use Jodatime in the project
     * We don't use the old Java data classes
+
+## Execute http calls to the rest API
+
+[IntelliJ http calls (Requires IntelliJ Ultimate)](requests.http)
+
+You can also use curl:
+
+### Call the Spring Boot Info actuator
+
+```
+curl http://localhost:8080/actuator/info | jq
+```
+
+### Call the Spring Boot Health actuator
+
+```
+curl http://localhost:8080/actuator/health | jq
+```
+
+### Create a user
+
+```
+curl -XPOST  -d '{"userName":"Rod"}' -H "Content-Type: application/json" http://localhost:8080/api/users
+```
+
+### Find a user
+
+```
+curl http://localhost:8080/api/users/1
+```
 
 ### Reference Documentation
 
